@@ -1,0 +1,293 @@
+﻿<Window x:Class="SplashScreenDLL.LoaderMetroStyleTXT_Simple"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SplashScreenDLL"
+        mc:Ignorable="d"
+        Title="Loading..." WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" Background="White"
+        Height="230" Width="300">
+
+    <Grid xmlns = "http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:system = "clr-namespace:System;assembly=mscorlib"
+          xmlns:x = "http://schemas.microsoft.com/winfx/2006/xaml" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+          xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions">
+        <Grid.Resources>
+            <!-- Particle Styling -->
+            <SolidColorBrush x:Key = "ParticleColor" Color = "#0000FF"/>
+            <SolidColorBrush x:Key = "ParticleBackgroundColor" Color = "Transparent"/>
+            <system:Double x:Key = "ParticleOpacity">1</system:Double>
+            <system:Double x:Key = "ParticleRadius">5</system:Double>
+
+            <system:Double x:Key = "StartingPointX">0</system:Double>
+            <system:Double x:Key = "StartingPointY">-20</system:Double>
+
+            <system:Double x:Key = "RotationPointX">0.5</system:Double>
+            <system:Double x:Key = "RotationPointY">0.5</system:Double>
+
+            <!-- Particle Origin Angles -->
+            <system:Double x:Key = "ParticleOriginAngleP0">0</system:Double>
+            <system:Double x:Key = "ParticleOriginAngleP1">-10</system:Double>
+            <system:Double x:Key = "ParticleOriginAngleP2">-20</system:Double>
+            <system:Double x:Key = "ParticleOriginAngleP3">-30</system:Double>
+            <system:Double x:Key = "ParticleOriginAngleP4">-40</system:Double>
+
+            <!-- Particle Position & Timing 1 -->
+            <system:Double x:Key = "ParticleBeginAngle1">0</system:Double>
+            <system:Double x:Key = "ParticleEndAngle1">90</system:Double>
+
+            <!-- Particle Position & Timing 2 -->
+            <system:Double x:Key = "ParticleBeginAngle2">90</system:Double>
+            <system:Double x:Key = "ParticleEndAngle2">270</system:Double>
+
+            <!-- Particle Position & Timing 3 -->
+            <system:Double x:Key = "ParticleBeginAngle3">270</system:Double>
+            <system:Double x:Key = "ParticleEndAngle3">360</system:Double>
+
+            <Style x:Key = "EllipseStyle" TargetType = "Ellipse">
+                <Setter Property = "Width" Value = "{StaticResource ParticleRadius}"/>
+                <Setter Property = "Height" Value = "{StaticResource ParticleRadius}"/>
+                <Setter Property = "Fill" Value = "{StaticResource ParticleColor}"/>
+                <Setter Property = "RenderTransformOrigin" Value = "0.5, 0.5"/>
+                <Setter Property = "Opacity" Value = "{StaticResource ParticleOpacity}"/>
+            </Style>
+        </Grid.Resources>
+        <Canvas Margin="141,111,86,166">
+            <Canvas.Triggers>
+                <EventTrigger RoutedEvent = "Canvas.Loaded">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard
+
+                            BeginTime = "00:00:00.000"
+
+                            Duration = "00:00:01.800"
+
+                            RepeatBehavior = "Forever">
+                                <DoubleAnimationUsingKeyFrames 
+
+                                Storyboard.TargetName = "p0"
+
+                                Storyboard.TargetProperty = "(UIElement.RenderTransform).(RotateTransform.Angle)">
+                                    <EasingDoubleKeyFrame KeyTime="00:00:00.000" Value="0"/>
+                                    <EasingDoubleKeyFrame KeyTime="00:00:00.750" Value="90"/>
+                                    <EasingDoubleKeyFrame KeyTime="00:00:01.050" Value="270"/>
+                                    <EasingDoubleKeyFrame KeyTime="00:00:01.800" Value="360"/>
+                                </DoubleAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </BeginStoryboard>
+                        <BeginStoryboard>
+                            <Storyboard
+
+                            BeginTime = "00:00:00.100"
+
+                            Duration = "00:00:01.800"
+
+                            RepeatBehavior = "Forever">
+                                <DoubleAnimationUsingKeyFrames 
+
+                                Storyboard.TargetName = "p1"
+
+                                Storyboard.TargetProperty = "(UIElement.RenderTransform).(RotateTransform.Angle)">
+                                    <EasingDoubleKeyFrame KeyTime="00:00:00.000" Value="0"/>
+                                    <EasingDoubleKeyFrame KeyTime="00:00:00.750" Value="90"/>
+                                    <EasingDoubleKeyFrame KeyTime="00:00:01.050" Value="270"/>
+                                    <EasingDoubleKeyFrame KeyTime="00:00:01.800" Value="360"/>
+                                </DoubleAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </BeginStoryboard>
+                        <BeginStoryboard>
+                            <Storyboard
+
+                            BeginTime = "00:00:00.200"
+
+                            Duration = "00:00:01.800"
+
+                            RepeatBehavior = "Forever">
+                                <DoubleAnimationUsingKeyFrames 
+
+                                Storyboard.TargetName = "p2"
+
+                                Storyboard.TargetProperty = "(UIElement.RenderTransform).(RotateTransform.Angle)">
+                                    <EasingDoubleKeyFrame KeyTime="00:00:00.000" Value="0"/>
+                                    <EasingDoubleKeyFrame KeyTime="00:00:00.750" Value="90"/>
+                                    <EasingDoubleKeyFrame KeyTime="00:00:01.050" Value="270"/>
+                                    <EasingDoubleKeyFrame KeyTime="00:00:01.800" Value="360"/>
+                                </DoubleAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </BeginStoryboard>
+                        <BeginStoryboard>
+                            <Storyboard
+
+                            BeginTime = "00:00:00.300"
+
+                            Duration = "00:00:01.800"
+
+                            RepeatBehavior = "Forever">
+                                <DoubleAnimationUsingKeyFrames 
+
+                                Storyboard.TargetName = "p3"
+
+                                Storyboard.TargetProperty = "(UIElement.RenderTransform).(RotateTransform.Angle)">
+                                    <EasingDoubleKeyFrame KeyTime="00:00:00.000" Value="0"/>
+                                    <EasingDoubleKeyFrame KeyTime="00:00:00.750" Value="90"/>
+                                    <EasingDoubleKeyFrame KeyTime="00:00:01.050" Value="270"/>
+                                    <EasingDoubleKeyFrame KeyTime="00:00:01.800" Value="360"/>
+                                </DoubleAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </BeginStoryboard>
+                        <BeginStoryboard>
+                            <Storyboard
+
+                            BeginTime = "00:00:00.400"
+
+                            Duration = "00:00:01.800"
+
+                            RepeatBehavior = "Forever">
+                                <DoubleAnimationUsingKeyFrames 
+
+                                Storyboard.TargetName = "p4"
+
+                                Storyboard.TargetProperty = "(UIElement.RenderTransform).(RotateTransform.Angle)">
+                                    <EasingDoubleKeyFrame KeyTime="00:00:00.000" Value="0"/>
+                                    <EasingDoubleKeyFrame KeyTime="00:00:00.750" Value="90"/>
+                                    <EasingDoubleKeyFrame KeyTime="00:00:01.050" Value="270"/>
+                                    <EasingDoubleKeyFrame KeyTime="00:00:01.800" Value="360"/>
+                                </DoubleAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </Canvas.Triggers>
+            <Border
+
+            x:Name = "p0"
+
+            Background = "{StaticResource ParticleBackgroundColor}"
+
+            Opacity = "{StaticResource ParticleOpacity}">
+                <Border.RenderTransform>
+                    <RotateTransform/>
+                </Border.RenderTransform>
+                <Border.RenderTransformOrigin>
+                    <Point X = "{StaticResource RotationPointX}" Y = "{StaticResource RotationPointY}"/>
+                </Border.RenderTransformOrigin>
+                <Ellipse Style = "{StaticResource EllipseStyle}">
+                    <Ellipse.RenderTransform>
+                        <TransformGroup>
+                            <TranslateTransform X = "{StaticResource StartingPointX}" Y = "{StaticResource StartingPointY}"/>
+                            <RotateTransform Angle = "{StaticResource ParticleOriginAngleP0}"/>
+                        </TransformGroup>
+                    </Ellipse.RenderTransform>
+                </Ellipse>
+            </Border>
+            <Border
+
+            x:Name = "p1"
+
+            Background = "{StaticResource ParticleBackgroundColor}"
+
+            Opacity = "{StaticResource ParticleOpacity}">
+                <Border.RenderTransform>
+                    <RotateTransform/>
+                </Border.RenderTransform>
+                <Border.RenderTransformOrigin>
+                    <Point X = "{StaticResource RotationPointX}" Y = "{StaticResource RotationPointY}"/>
+                </Border.RenderTransformOrigin>
+                <Ellipse Style = "{StaticResource EllipseStyle}">
+                    <Ellipse.RenderTransform>
+                        <TransformGroup>
+                            <TranslateTransform X = "{StaticResource StartingPointX}" Y = "{StaticResource StartingPointY}"/>
+                            <RotateTransform Angle = "{StaticResource ParticleOriginAngleP1}"/>
+                        </TransformGroup>
+                    </Ellipse.RenderTransform>
+                </Ellipse>
+            </Border>
+            <Border
+
+            x:Name = "p2"
+
+            Background = "{StaticResource ParticleBackgroundColor}"
+
+            Opacity = "{StaticResource ParticleOpacity}">
+                <Border.RenderTransform>
+                    <RotateTransform/>
+                </Border.RenderTransform>
+                <Border.RenderTransformOrigin>
+                    <Point X = "{StaticResource RotationPointX}" Y = "{StaticResource RotationPointY}"/>
+                </Border.RenderTransformOrigin>
+                <Ellipse Style = "{StaticResource EllipseStyle}">
+                    <Ellipse.RenderTransform>
+                        <TransformGroup>
+                            <TranslateTransform X = "{StaticResource StartingPointX}" Y = "{StaticResource StartingPointY}"/>
+                            <RotateTransform Angle = "{StaticResource ParticleOriginAngleP2}"/>
+                        </TransformGroup>
+                    </Ellipse.RenderTransform>
+                </Ellipse>
+            </Border>
+            <Border
+
+            x:Name = "p3"
+
+            Background = "{StaticResource ParticleBackgroundColor}"
+
+            Opacity = "{StaticResource ParticleOpacity}">
+                <Border.RenderTransform>
+                    <RotateTransform/>
+                </Border.RenderTransform>
+                <Border.RenderTransformOrigin>
+                    <Point X = "{StaticResource RotationPointX}" Y = "{StaticResource RotationPointY}"/>
+                </Border.RenderTransformOrigin>
+                <Ellipse Style = "{StaticResource EllipseStyle}">
+                    <Ellipse.RenderTransform>
+                        <TransformGroup>
+                            <TranslateTransform X = "{StaticResource StartingPointX}" Y = "{StaticResource StartingPointY}"/>
+                            <RotateTransform Angle = "{StaticResource ParticleOriginAngleP3}"/>
+                        </TransformGroup>
+                    </Ellipse.RenderTransform>
+                </Ellipse>
+            </Border>
+            <Border
+
+            x:Name = "p4"
+
+            Background = "{StaticResource ParticleBackgroundColor}"
+
+            Opacity = "{StaticResource ParticleOpacity}">
+                <Border.RenderTransform>
+                    <RotateTransform/>
+                </Border.RenderTransform>
+                <Border.RenderTransformOrigin>
+                    <Point X = "{StaticResource RotationPointX}" Y = "{StaticResource RotationPointY}"/>
+                </Border.RenderTransformOrigin>
+                <Ellipse Style = "{StaticResource EllipseStyle}">
+                    <Ellipse.RenderTransform>
+                        <TransformGroup>
+                            <TranslateTransform X = "{StaticResource StartingPointX}" Y = "{StaticResource StartingPointY}"/>
+                            <RotateTransform Angle = "{StaticResource ParticleOriginAngleP4}"/>
+                        </TransformGroup>
+                    </Ellipse.RenderTransform>
+                </Ellipse>
+            </Border>
+        </Canvas>
+
+
+        <TextBlock Name="txt_Status" Margin="0,161,0,0" Height="20" TextWrapping="Wrap" 
+                   Text="{Binding UpdateSourceTrigger=PropertyChanged, Path=Message}" 
+                   TextAlignment="Center"
+                   VerticalAlignment="Top" HorizontalAlignment="Stretch" Foreground="Black" />
+        <Image Source="ico.ico" HorizontalAlignment="Left" Height="44" Margin="10,8,0,0" VerticalAlignment="Top" Width="46" Visibility="Collapsed"/>
+        <TextBlock Name="txt_ProgramName" Height="25" TextAlignment="Center" 
+                   Text="{Binding UpdateSourceTrigger=PropertyChanged, Path=ProgramName}" 
+                   FontSize="16" FontWeight="UltraBold" Margin="48,12,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200"/>
+
+        <!-- TextBlock-и для версии программы и копирайта  -->
+        <TextBlock Name="txt_SoftVersion" HorizontalAlignment="Left" Margin="10,206,0,0" 
+                   Text="{Binding UpdateSourceTrigger=PropertyChanged, Path=SoftVersion}" 
+                   FontSize="10" FontStyle="Italic"
+                   VerticalAlignment="Top" Width="100"/>
+        <TextBlock Name="txt_Copyright" HorizontalAlignment="Left" Margin="170,206,0,0" 
+                   FontSize="10" FontStyle="Italic"
+                   TextWrapping="Wrap" Text="Палитра Систем©2017" VerticalAlignment="Top" Width="130"/>
+    </Grid>
+</Window>
+
